@@ -45,6 +45,14 @@ namespace AutoBuddy
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
+            
+               // fix for aram map; and conflict with AramBuddy 
+            if (Game.MapId != GameMapId.SummonersRift)
+            {
+                Chat.Print(Game.MapId + " IS NOT Supported By AutoBuddyBeta by Akumetsu");
+                return;
+            }
+            
             //AutoBlack Spear
             if (myHero.Hero == Champion.Kalista)
             {
